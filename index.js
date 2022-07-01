@@ -20,3 +20,22 @@ function longestString(arr) {
 
 // problem 2
 // Write a function that takes a string, and returns the character that is most commonly used in the string.
+
+function commonCharacter(str) {
+  const charCount = {}; //Step 0
+  let maxCharCount = 0;
+  let maxChar = '';
+  for (let i = 0; i < str.length; i++) {
+    // Step 1.
+    charCount[str[i]] = ++charCount[str[i]] || 1;
+  }
+
+  for (let key in charCount) {
+    //Step 2
+    if (charCount[key] >= maxCharCount) {
+      maxCharCount = charCount[key]; //Step 3
+      maxChar = key;
+    }
+  }
+  return maxChar;
+}
