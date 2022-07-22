@@ -57,4 +57,20 @@ var hammingWeight = function (n) {
   return ans.length;
 };
 
-console.log(hammingWeight('111111111111111111001'));
+// console.log(hammingWeight('111111111111111111001'));
+
+const MissingNumber = (array, n) => {
+  //code here
+  let arr = array.sort((a, b) => a - b);
+  arr.reduce((acc, val) => {
+    // console.log(acc + val);
+  }, 0);
+  let next = 0;
+  // let prev = arr[0]
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] !== next + 1) {
+      console.log(arr[i]);
+    }
+  }
+};
+MissingNumber([2, 1, 5, 4], 5);
