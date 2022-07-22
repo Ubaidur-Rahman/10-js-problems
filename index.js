@@ -69,8 +69,22 @@ const MissingNumber = (array, n) => {
   // let prev = arr[0]
   for (let i = 0; i < arr.length; i++) {
     if (arr[i] !== next + 1) {
-      console.log(arr[i]);
+      // console.log(arr[i]);
     }
   }
 };
 MissingNumber([2, 1, 5, 4], 5);
+
+const ceilingNum = (arr, target) => {
+  let targetArr = arr.filter((el) => el >= target);
+  return targetArr[0];
+};
+
+console.log(ceilingNum([1, 2, 6, 8, 9, 12, 15, 18, 32], 10));
+
+const floorNum = (arr, target) => {
+  let targetArr = arr.filter((el) => el <= target);
+  return targetArr[targetArr.length - 1];
+};
+
+console.log(floorNum([1, 2, 6, 8, 9, 12, 15, 18, 32], 12));
