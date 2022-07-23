@@ -60,20 +60,28 @@ var hammingWeight = function (n) {
 // console.log(hammingWeight('111111111111111111001'));
 
 const MissingNumber = (array, n) => {
-  //code here
   let arr = array.sort((a, b) => a - b);
-  arr.reduce((acc, val) => {
-    // console.log(acc + val);
-  }, 0);
-  let next = 0;
-  // let prev = arr[0]
   for (let i = 0; i < arr.length; i++) {
-    if (arr[i] !== next + 1) {
-      // console.log(arr[i]);
+    if (arr[i] != i) {
+      return i;
+    } else {
+      return arr[arr.length];
     }
   }
 };
-MissingNumber([2, 1, 5, 4], 5);
+// console.log(MissingNumber([2, 1, 5, 4]));
+
+var missingNumber = (nums) => {
+  let arr = nums.sort((a, b) => a - b);
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] != i) {
+      return i;
+    }
+  }
+  return arr.length;
+};
+
+console.log(missingNumber([3, 0, 1]));
 
 const ceilingNum = (arr, target) => {
   let targetArr = arr.filter((el) => el >= target);
@@ -88,3 +96,10 @@ const floorNum = (arr, target) => {
 };
 
 console.log(floorNum([1, 2, 6, 8, 9, 12, 15, 18, 32], 12));
+
+// sort an array
+
+var sortArray = function (nums) {
+  return nums.sort((a, b) => a - b);
+};
+console.log(sortArray([3, 0, 1]));
