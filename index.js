@@ -81,25 +81,68 @@ var missingNumber = (nums) => {
   return arr.length;
 };
 
-console.log(missingNumber([3, 0, 1]));
+// console.log(missingNumber([3, 0, 1]));
 
 const ceilingNum = (arr, target) => {
   let targetArr = arr.filter((el) => el >= target);
   return targetArr[0];
 };
 
-console.log(ceilingNum([1, 2, 6, 8, 9, 12, 15, 18, 32], 10));
+// console.log(ceilingNum([1, 2, 6, 8, 9, 12, 15, 18, 32], 10));
 
 const floorNum = (arr, target) => {
   let targetArr = arr.filter((el) => el <= target);
   return targetArr[targetArr.length - 1];
 };
 
-console.log(floorNum([1, 2, 6, 8, 9, 12, 15, 18, 32], 12));
+// console.log(floorNum([1, 2, 6, 8, 9, 12, 15, 18, 32], 12));
 
 // sort an array
 
 var sortArray = function (nums) {
   return nums.sort((a, b) => a - b);
 };
-console.log(sortArray([3, 0, 1]));
+// console.log(sortArray([3, 0, 1]));
+
+// Given an unsorted integer array nums, return the smallest missing positive integer.
+
+// You must implement an algorithm that runs in O(n) time and uses constant extra space.
+
+var firstMissingPositive = function (nums) {
+  let arr = nums.sort((a, b) => a - b);
+  const firstElement = arr[0];
+  const lastElement = arr[arr.length - 1];
+  let arrLength = lastElement - firstElement;
+
+  // for (let i = 0; i < arr.length; i++) {
+  //   if (arr[i] != i) {
+  //     return i;
+  //   }
+  // }
+  console.log(arr, arrLength);
+};
+
+firstMissingPositive([3, 4, -1, 1]);
+
+// Given a non-empty array of integers nums, every element appears twice except for one. Find that single one.
+
+// You must implement a solution with a linear runtime complexity and use only constant extra space.
+
+var singleNumber = function (nums) {
+  nums.forEach((el) => {
+    let hasNumber = nums.includes(el);
+    console.log(hasNumber, el);
+  });
+  // let hasNumber = nums.includes(1);
+  // console.log(hasNumber);
+};
+
+singleNumber([4, 1, 2, 1, 2]);
+// Input: nums = [1]
+// Output: 1
+
+// Input: nums = [4,1,2,1,2]
+// Output: 4
+
+// Input: nums = [2,2,1]
+// Output: 1
