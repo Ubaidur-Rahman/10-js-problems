@@ -137,7 +137,7 @@ var singleNumber = function (nums) {
   // console.log(hasNumber);
 };
 
-singleNumber([4, 1, 2, 1, 2]);
+// singleNumber([4, 1, 2, 1, 2]);
 // Input: nums = [1]
 // Output: 1
 
@@ -146,3 +146,20 @@ singleNumber([4, 1, 2, 1, 2]);
 
 // Input: nums = [2,2,1]
 // Output: 1
+
+// Given an array of integers nums sorted in non-decreasing order, find the starting and ending position of a given target value.
+
+// If target is not found in the array, return [-1, -1].
+
+// You must write an algorithm with O(log n) runtime complexity.
+
+var searchRange = function (nums, target) {
+  let firstIndex = nums.indexOf(target);
+  let lastIndex = nums.lastIndexOf(target);
+  if (nums.includes(target)) {
+    return [firstIndex, lastIndex];
+  }
+  return [-1, -1];
+};
+console.log(searchRange([1], 1));
+
