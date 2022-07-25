@@ -122,7 +122,7 @@ var firstMissingPositive = function (nums) {
   console.log(arr, arrLength);
 };
 
-firstMissingPositive([3, 4, -1, 1]);
+// firstMissingPositive([3, 4, -1, 1]);
 
 // Given a non-empty array of integers nums, every element appears twice except for one. Find that single one.
 
@@ -161,12 +161,11 @@ var searchRange = function (nums, target) {
   }
   return [-1, -1];
 };
-console.log(searchRange([1], 1));
+// console.log(searchRange([1], 1));
 
 // Given an integer n, return all the numbers in the range [1, n] sorted in lexicographical order.
 
 // You must write an algorithm that runs in O(n) time and uses O(1) extra space.
-
 
 var lexicalOrder = function (n) {
   let ans = [];
@@ -178,5 +177,33 @@ var lexicalOrder = function (n) {
   }
   return ans.sort();
 };
-console.log(lexicalOrder(5));
+// console.log(lexicalOrder(5));
 
+const stat = (arr, n) => {
+  let mean = arr.reduce((acc, curr) => acc + curr, 0) / n;
+  let sortArr = arr.sort((a, b) => a - b);
+  let median = 0;
+  if (n % 2 === 0) {
+    median = (sortArr[n / 2] + sortArr[n / 2 - 1]) / 2;
+  } else {
+    median = sortArr[(n - 1) / 2];
+  }
+  console.log(median);
+  let mode = sortArr.reduce(
+    (a, b, i, arr) =>
+      arr.filter((v) => v === a).length >= arr.filter((v) => v === b).length
+        ? a
+        : b,
+    null
+  );
+  console.log(mean);
+  console.log(median);
+  console.log(mode);
+  return [mean, median, mode];
+};
+console.log(
+  stat(
+    [64630, 11735, 14216, 99233, 14470, 4978, 73429, 38120, 51135, 67060],
+    10
+  )
+);
