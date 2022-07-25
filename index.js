@@ -163,3 +163,20 @@ var searchRange = function (nums, target) {
 };
 console.log(searchRange([1], 1));
 
+// Given an integer n, return all the numbers in the range [1, n] sorted in lexicographical order.
+
+// You must write an algorithm that runs in O(n) time and uses O(1) extra space.
+
+
+var lexicalOrder = function (n) {
+  let ans = [];
+  for (let i = 0; i <= n; ++i) {
+    if (i === 0) {
+      continue;
+    }
+    ans.push(i);
+  }
+  return ans.sort();
+};
+console.log(lexicalOrder(5));
+
