@@ -221,3 +221,22 @@ var rangeBitwiseAnd = function (left, right) {
 };
 
 console.log(rangeBitwiseAnd(5, 7));
+
+var areNumbersAscending = function (s) {
+  let numb = s.match(/\d+/g);
+  let numbArr = numb.map((num) => Number(num));
+  console.log(numbArr);
+
+  for (let i = 0; i < numbArr.length; i++) {
+    if (numbArr[i + 1] && numbArr[i + 1] > numbArr[i]) {
+      continue;
+    } else if (numbArr[i + 1] && numbArr[i + 1] <= numbArr[i]) {
+      return false;
+    }
+  }
+  return true;
+};
+
+console.log(areNumbersAscending('hello world 5 x 5'));
+
+
