@@ -245,3 +245,14 @@ var areNumbersAscending = function (s) {
 };
 
 console.log(areNumbersAscending('hello world 5 x 5'));
+
+// Given an integer array nums, find three numbers whose product is maximum and return the maximum product.
+
+var maximumProduct = function (nums) {
+  let sortArr = nums.sort((a, b) => a + b);
+  console.log(sortArr);
+  let maxNumArr = sortArr.slice(sortArr.length - 3);
+  return maxNumArr.reduce((acc, curr) => acc * curr, 1);
+};
+
+console.log(maximumProduct([-100, -2, -3, 1]));
