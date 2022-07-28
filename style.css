@@ -1,3 +1,13 @@
-h1, h2 {
+body {
+  background-color: rgb(53, 53, 155);
+}
+h1,
+h2 {
   font-family: Lato;
+  color: rgb(235, 15, 206);
+  text-align: center;
+}
+span {
+  color: rgb(255, 230, 0);
+  text-transform: uppercase;
 }
