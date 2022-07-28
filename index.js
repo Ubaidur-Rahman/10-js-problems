@@ -340,3 +340,24 @@ var checkPerfectNumber = function (num) {
 };
 
 // console.log(checkPerfectNumber())
+
+// Given two strings s and t, return true if t is an anagram of s, and false otherwise.
+
+// An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.
+
+var isAnagram = function (s, t) {
+  let sortArr = (str) => str.split('').sort();
+  let array1 = sortArr(s);
+  let array2 = sortArr(t);
+  if (array1.length === array2.length) {
+    return array1.every((element, index) => {
+      if (element === array2[index]) {
+        return true;
+      }
+      return false;
+    });
+  }
+
+  return false;
+};
+console.log(isAnagram('rat', 'tar'));
