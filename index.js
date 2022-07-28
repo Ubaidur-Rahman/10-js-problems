@@ -257,8 +257,6 @@ var maximumProduct = function (nums) {
 
 console.log(maximumProduct([-100, -2, -3, 1]));
 
-
-
 // The Fibonacci numbers, commonly denoted F(n) form a sequence, called the Fibonacci sequence, such that each number is the sum of the two preceding ones, starting from 0 and 1. That is,
 
 // F(0) = 0, F(1) = 1
@@ -270,12 +268,28 @@ const fib = function (n) {
   if (n === 1) return 1;
   return fib(n - 1) + fib(n - 2);
 };
-console.log(fib(10));
+// console.log(fib(10));
 
+// The complement of an integer is the integer you get when you flip all the 0's to 1's and all the 1's to 0's in its binary representation.
 
-console.log((5).toString(2))
+// For example, The integer 5 is "101" in binary and its complement is "010" which is the integer 2.
+// Given an integer num, return its complement.
 
-
+var bitwiseComplement = function (n) {
+  let reverseNum = n
+    .toString(2)
+    .split('')
+    .map((i) => {
+      if (i == 1) {
+        return (i = 0);
+      } else {
+        return (i = 1);
+      }
+    })
+    .join('');
+  return parseInt(reverseNum, 2);
+};
+// console.log(bitwiseComplement(10));
 
 // A perfect number is a positive integer that is equal to the sum of its positive divisors, excluding the number itself. A divisor of an integer x is an integer that can divide x evenly.
 
@@ -293,15 +307,14 @@ console.log((5).toString(2))
 //   return sumOfArr === num ? true : false;
 // };
 
-
 var checkPerfectNumber = function (num) {
   let sum = 0;
   for (let i = 1; i <= num; i++) {
     if (num % i == 0) {
-      sum+=i;
+      sum += i;
     }
   }
-  return sum-num === num ? true : false;
+  return sum - num === num ? true : false;
 };
 
 // console.log(checkPerfectNumber())
