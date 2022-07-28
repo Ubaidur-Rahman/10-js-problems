@@ -257,6 +257,8 @@ var maximumProduct = function (nums) {
 
 console.log(maximumProduct([-100, -2, -3, 1]));
 
+
+
 // The Fibonacci numbers, commonly denoted F(n) form a sequence, called the Fibonacci sequence, such that each number is the sum of the two preceding ones, starting from 0 and 1. That is,
 
 // F(0) = 0, F(1) = 1
@@ -269,3 +271,37 @@ const fib = function (n) {
   return fib(n - 1) + fib(n - 2);
 };
 console.log(fib(10));
+
+
+console.log((5).toString(2))
+
+
+
+// A perfect number is a positive integer that is equal to the sum of its positive divisors, excluding the number itself. A divisor of an integer x is an integer that can divide x evenly.
+
+// Given an integer n, return true if n is a perfect number, otherwise return false.
+
+// var checkPerfectNumber = function (num) {
+//   let allFactorsNum = [];
+//   for (let i = 1; i <= num; i++) {
+//     if (num % i == 0) {
+//       allFactorsNum.push(i);
+//     }
+//   }
+//   let factorsNum = allFactorsNum.slice(0, -1);
+//   let sumOfArr = factorsNum.reduce((acc, curr) => acc + curr, 0);
+//   return sumOfArr === num ? true : false;
+// };
+
+
+var checkPerfectNumber = function (num) {
+  let sum = 0;
+  for (let i = 1; i <= num; i++) {
+    if (num % i == 0) {
+      sum+=i;
+    }
+  }
+  return sum-num === num ? true : false;
+};
+
+// console.log(checkPerfectNumber())
