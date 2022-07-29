@@ -460,3 +460,23 @@ var reverse = function (x) {
 };
 // console.log(reverse(521));
 // console.log(reverse(1534236469));
+
+// Given an array nums of integers, return how many of them contain an even number of digits.
+
+var findNumbers = function (nums) {
+  function logN(n) {
+    if (n < 0) {
+      n *= -1;
+    }
+    return Math.floor(Math.log10(n) + 1);
+  }
+  let arr = [];
+  for (let i = 0; i < nums.length; i++) {
+    if (logN(nums[i]) % 2 == 0) {
+      arr.push(nums[i]);
+    }
+  }
+  return arr.length;
+};
+
+console.log(findNumbers([252]));
