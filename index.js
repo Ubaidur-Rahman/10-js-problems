@@ -196,17 +196,17 @@ const stat = (arr, n) => {
         : b,
     null
   );
-  console.log(mean);
-  console.log(median);
-  console.log(mode);
+  // console.log(mean);
+  // console.log(median);
+  // console.log(mode);
   return [mean, median, mode];
 };
-console.log(
-  stat(
-    [64630, 11735, 14216, 99233, 14470, 4978, 73429, 38120, 51135, 67060],
-    10
-  )
-);
+// console.log(
+//   stat(
+//     [64630, 11735, 14216, 99233, 14470, 4978, 73429, 38120, 51135, 67060],
+//     10
+//   )
+// );
 
 // Given two integers left and right that represent the range [left, right], return the bitwise AND of all numbers in this range, inclusive.
 
@@ -220,7 +220,7 @@ var rangeBitwiseAnd = function (left, right) {
   return left << i;
 };
 
-console.log(rangeBitwiseAnd(5, 7));
+// console.log(rangeBitwiseAnd(5, 7));
 
 // A sentence is a list of tokens separated by a single space with no leading or trailing spaces. Every token is either a positive number consisting of digits 0-9 with no leading zeros, or a word consisting of lowercase English letters.
 
@@ -244,18 +244,18 @@ var areNumbersAscending = function (s) {
   return true;
 };
 
-console.log(areNumbersAscending('hello world 5 x 5'));
+// console.log(areNumbersAscending('hello world 5 x 5'));
 
 // Given an integer array nums, find three numbers whose product is maximum and return the maximum product.
 
 var maximumProduct = function (nums) {
   let sortArr = nums.sort((a, b) => a + b);
-  console.log(sortArr);
+  // console.log(sortArr);
   let maxNumArr = sortArr.slice(sortArr.length - 3);
   return maxNumArr.reduce((acc, curr) => acc * curr, 1);
 };
 
-console.log(maximumProduct([-100, -2, -3, 1]));
+// console.log(maximumProduct([-100, -2, -3, 1]));
 
 // The Fibonacci numbers, commonly denoted F(n) form a sequence, called the Fibonacci sequence, such that each number is the sum of the two preceding ones, starting from 0 and 1. That is,
 
@@ -360,7 +360,7 @@ var isAnagram = function (s, t) {
 
   return false;
 };
-console.log(isAnagram('rat', 'tar'));
+// console.log(isAnagram('rat', 'tar'));
 
 //matrix
 
@@ -440,12 +440,12 @@ const multiplyMatrices = function (matrixA, matrixB) {
   ];
 };
 
-console.log(
-  multiplyMatrices(
-    [4, 0, 0, 0, 0, 3, 0, 0, 0, 0, 5, 0, 4, 8, 4, 1],
-    [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1]
-  )
-);
+// console.log(
+//   multiplyMatrices(
+//     [4, 0, 0, 0, 0, 3, 0, 0, 0, 0, 5, 0, 4, 8, 4, 1],
+//     [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1]
+//   )
+// );
 
 // Given a signed 32-bit integer x, return x with its digits reversed. If reversing x causes the value to go outside the signed 32-bit integer range [-231, 231 - 1], then return 0.
 
@@ -479,4 +479,21 @@ var findNumbers = function (nums) {
   return arr.length;
 };
 
-console.log(findNumbers([252]));
+// console.log(findNumbers([252]));
+
+// You are given a string s and an integer array indices of the same length. The string s will be shuffled such that the character at the ith position moves to indices[i] in the shuffled string.
+
+// Return the shuffled string.
+
+var restoreString = function (s, indices) {};
+
+// Given the array nums consisting of 2n elements in the form [x1,x2,...,xn,y1,y2,...,yn].
+// Return the array in the form [x1,y1,x2,y2,...,xn,yn].
+
+var shuffle = function (nums, n) {
+  let lastArr = nums.splice(n);
+  // console.log(nums, lastArr)
+  return nums.flatMap((el, i) => [el, lastArr[i]]);
+};
+
+console.log(shuffle([2, 5, 1, 3, 4, 7], 3));
