@@ -496,4 +496,17 @@ var shuffle = function (nums, n) {
   return nums.flatMap((el, i) => [el, lastArr[i]]);
 };
 
-console.log(shuffle([2, 5, 1, 3, 4, 7], 3));
+// console.log(shuffle([2, 5, 1, 3, 4, 7], 3));
+
+// Given an array nums. We define a running sum of an array as runningSum[i] = sum(nums[0]…nums[i]).
+
+// Return the running sum of nums.
+
+var runningSum = function (nums) {
+  let prev = 0;
+  return nums.map((e) => {
+    return (prev += e);
+  });
+};
+
+// console.log(runningSum([2, 5, 1, 3, 4, 7]))
