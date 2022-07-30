@@ -566,8 +566,7 @@ var twoSumAdvance = function (numbers, target) {
 
 var addBinary = function (a, b) {
   let dec =
-    parseInt(parseInt(a, 2).toString(10)) +
-    parseInt(parseInt(b, 2).toString(10));
+    Number(parseInt(a, 2).toString(10)) + Number(parseInt(b, 2).toString(10));
   return (dec >>> 0).toString(2);
 };
 
