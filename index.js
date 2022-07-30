@@ -510,3 +510,17 @@ var runningSum = function (nums) {
 };
 
 // console.log(runningSum([2, 5, 1, 3, 4, 7]))
+
+var findMiddleIndex = function(nums) {
+  let postSum = nums.reduce((a, b) => a + b);
+  console.log(postSum)
+  let preSum = 0;
+  for (let i = 0; i < nums.length; i++) {
+      postSum -= nums[i];
+      if (postSum === preSum) return i;
+      preSum += nums[i]
+  }
+  return -1;
+}
+
+console.log(findMiddleIndex([1,5,4,6]))
