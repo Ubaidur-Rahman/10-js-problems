@@ -549,6 +549,8 @@ var twoSum = function (nums, target) {
 
 // Your solution must use only constant extra space.
 
+// Hash Map
+
 var twoSumAdvance = function (numbers, target) {
   let result = new Map();
   for (let i = 0; i <= numbers.length; i++) {
@@ -561,3 +563,12 @@ var twoSumAdvance = function (numbers, target) {
 };
 
 // console.log(twoSumAdvance([3, 2, 4], 7));
+
+var addBinary = function (a, b) {
+  let dec =
+    parseInt(parseInt(a, 2).toString(10)) +
+    parseInt(parseInt(b, 2).toString(10));
+  return (dec >>> 0).toString(2);
+};
+
+console.log(addBinary('1010', '1011'));
