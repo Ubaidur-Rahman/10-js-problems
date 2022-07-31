@@ -511,7 +511,6 @@ var runningSum = function (nums) {
 
 // console.log(runningSum([2, 5, 1, 3, 4, 7]))
 
-
 // Given a 0-indexed integer array nums, find the leftmost middleIndex (i.e., the smallest amongst all the possible ones).
 
 // A middleIndex is an index where nums[0] + nums[1] + ... + nums[middleIndex-1] == nums[middleIndex+1] + nums[middleIndex+2] + ... + nums[nums.length-1].
@@ -519,8 +518,6 @@ var runningSum = function (nums) {
 // If middleIndex == 0, the left side sum is considered to be 0. Similarly, if middleIndex == nums.length - 1, the right side sum is considered to be 0.
 
 // Return the leftmost middleIndex that satisfies the condition, or -1 if there is no such index.
-
- 
 
 var findMiddleIndex = function (nums) {
   let postSum = nums.reduce((a, b) => a + b);
@@ -536,19 +533,19 @@ var findMiddleIndex = function (nums) {
 
 //=================================
 
-var pivotIndex = function(nums) {
+var pivotIndex = function (nums) {
   let postSum = nums.reduce((a, b) => a + b);
-console.log(postSum);
-let preSum = 0;
-for (let i = 0; i < nums.length; i++) {
-  postSum -= nums[i];
-  if (postSum === preSum) return i;
-  preSum += nums[i];
-}
-return -1;
+  console.log(postSum);
+  let preSum = 0;
+  for (let i = 0; i < nums.length; i++) {
+    postSum -= nums[i];
+    if (postSum === preSum) return i;
+    preSum += nums[i];
+  }
+  return -1;
 };
 
-console.log(findMiddleIndex([1,5,4,6]))
+// console.log(findMiddleIndex([1, 5, 4, 6]));
 
 // Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
 
@@ -595,4 +592,29 @@ var addBinary = function (a, b) {
   return (dec >>> 0).toString(2);
 };
 
-console.log(addBinary('1010', '1011'));
+// console.log(addBinary('1010', '1011'));
+
+var addTwoNumbers = function (l1, l2) {
+  let ans = (parseInt(l1.join('')) + parseInt(l2.join('')))
+    .toString()
+    .split('')
+    .reverse();
+  return ans;
+};
+
+// console.log(addTwoNumbers([9, 9, 9, 9, 9, 9, 9], [9, 9, 9, 9]));
+
+// An array is monotonic if it is either monotone increasing or monotone decreasing.
+
+// An array nums is monotone increasing if for all i <= j, nums[i] <= nums[j]. An array nums is monotone decreasing if for all i <= j, nums[i] >= nums[j].
+
+// Given an integer array nums, return true if the given array is monotonic, or false otherwise.
+
+var isMonotonic = function (nums) {
+  return (
+    nums.every((el, i) => i === 0 || el <= nums[i - 1]) ||
+    nums.every((el, i) => i === 0 || el >= nums[i - 1])
+  );
+};
+
+console.log(isMonotonic([1, 1, 2, 3, 3]));
