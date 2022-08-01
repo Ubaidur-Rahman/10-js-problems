@@ -617,4 +617,23 @@ var isMonotonic = function (nums) {
   );
 };
 
-console.log(isMonotonic([1, 1, 2, 3, 3]));
+// console.log(isMonotonic([1, 1, 2, 3, 3]));
+
+// You are given a 0-indexed integer array nums and a target element target.
+
+// A target index is an index i such that nums[i] == target.
+
+// Return a list of the target indices of nums after sorting nums in non-decreasing order. If there are no target indices, return an empty list. The returned list must be sorted in increasing order.
+
+var targetIndices = function (nums, target) {
+  let ans = [];
+  let sortArr = nums.sort((a, b) => a - b);
+  sortArr.forEach((el, i) => {
+    if (el === target) {
+      ans.push(i);
+    }
+  });
+  return ans;
+};
+
+console.log(targetIndices([1, 2, 5, 2, 3], 5));
