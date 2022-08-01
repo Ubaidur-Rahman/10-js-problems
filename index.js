@@ -672,3 +672,23 @@ var canWinNim = function (n) {
   }
   return false;
 };
+
+// Given an integer n, return true if it is a power of three. Otherwise, return false.
+
+// An integer n is a power of three, if there exists an integer x such that n == 3x.
+
+var isPowerOfThree = function (n) {
+  if (n == 0) {
+    return false;
+  }
+  // base case handling:
+  if (n == 1) {
+    return true;
+  } else if (n % 3 == 0) {
+    return isPowerOfThree(n / 3);
+  } else {
+    return false;
+  }
+};
+
+console.log(isPowerOfThree(27));
