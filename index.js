@@ -636,4 +636,24 @@ var targetIndices = function (nums, target) {
   return ans;
 };
 
-console.log(targetIndices([1, 2, 5, 2, 3], 5));
+// console.log(targetIndices([1, 2, 5, 2, 3], 5));
+
+// Given an array of integers arr, replace each element with its rank.
+
+// The rank represents how large the element is. The rank has the following rules:
+
+// Rank is an integer starting from 1.
+// The larger the element, the larger the rank. If two elements are equal, their rank must be the same.
+// Rank should be as small as possible.
+
+var arrayRankTransform = function (arr) {
+  let instanceOfArr = new Set(arr);
+  let ans = [];
+  let sortArr = [...instanceOfArr].sort((a, b) => a - b);
+  for (let i = 0; i < arr.length; i++) {
+    ans[i] = sortArr.indexOf(arr[i]) + 1;
+  }
+  return ans;
+};
+
+console.log(arrayRankTransform([40, 10, 20, 30, 20]));
