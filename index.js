@@ -27,9 +27,10 @@ function commonCharacter(str) {
   let maxChar = '';
   for (let i = 0; i < str.length; i++) {
     // Step 1.
+    console.log(++charCount[str[i]]);
     charCount[str[i]] = ++charCount[str[i]] || 1;
   }
-
+  console.log(charCount);
   for (let key in charCount) {
     //Step 2
     if (charCount[key] >= maxCharCount) {
@@ -691,7 +692,7 @@ var isPowerOfThree = function (n) {
   }
 };
 
-console.log(isPowerOfThree(27));
+// console.log(isPowerOfThree(27));
 
 // Given an integer array nums sorted in non-decreasing order, remove the duplicates in-place such that each unique element appears only once. The relative order of the elements should be kept the same.
 
@@ -740,4 +741,18 @@ var strStr = function (haystack, needle) {
   return haystack.indexOf(needle);
 };
 
-console.log(strStr('a', 'a'));
+// console.log(strStr('a', 'a'));
+
+var singleNumber = function (nums) {
+  const singleNum = {};
+  for (let i = 0; i < nums.length; i++) {
+    singleNum[nums[i]] = ++singleNum[nums[i]] || 1;
+  }
+  for (let key in singleNum) {
+    if(singleNum[key]===1){
+      return key
+    }
+  }
+};
+
+console.log(singleNumber([1, 2, 1, 2, 3]));
