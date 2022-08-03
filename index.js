@@ -749,10 +749,28 @@ var singleNumber = function (nums) {
     singleNum[nums[i]] = ++singleNum[nums[i]] || 1;
   }
   for (let key in singleNum) {
-    if(singleNum[key]===1){
-      return key
+    if (singleNum[key] === 1) {
+      return key;
     }
   }
 };
 
 console.log(singleNumber([1, 2, 1, 2, 3]));
+
+// Given an array of integers nums containing n + 1 integers where each integer is in the range [1, n] inclusive.
+
+// There is only one repeated number in nums, return this repeated number.
+
+// You must solve the problem without modifying the array nums and uses only constant extra space.
+
+var findDuplicate = function (nums) {
+  const singleNum = {};
+  for (let i = 0; i < nums.length; i++) {
+    singleNum[nums[i]] = ++singleNum[nums[i]] || 1;
+  }
+  for (let key in singleNum) {
+    if (singleNum[key] > 1) {
+      return key;
+    }
+  }
+};
