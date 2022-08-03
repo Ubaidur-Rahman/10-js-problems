@@ -755,7 +755,7 @@ var singleNumber = function (nums) {
   }
 };
 
-console.log(singleNumber([1, 2, 1, 2, 3]));
+// console.log(singleNumber([1, 2, 1, 2, 3]));
 
 // Given an array of integers nums containing n + 1 integers where each integer is in the range [1, n] inclusive.
 
@@ -774,3 +774,23 @@ var findDuplicate = function (nums) {
     }
   }
 };
+
+// Given an integer array nums, in which exactly two elements appear only once and all the other elements appear exactly twice. Find the two elements that appear only once. You can return the answer in any order.
+
+// You must write an algorithm that runs in linear runtime complexity and uses only constant extra space.
+
+var singleNumber = function (nums) {
+  const singleNum = {};
+  for (let i = 0; i < nums.length; i++) {
+    singleNum[nums[i]] = ++singleNum[nums[i]] || 1;
+  }
+  let ans = [];
+  for (let key in singleNum) {
+    if (!(singleNum[key] > 1)) {
+      ans.push(key);
+    }
+  }
+  return ans;
+};
+
+console.log(singleNumber([1, 2, 1, 3, 2, 5]));
