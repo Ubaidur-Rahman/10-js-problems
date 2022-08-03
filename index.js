@@ -794,3 +794,21 @@ var singleNumber = function (nums) {
 };
 
 console.log(singleNumber([1, 2, 1, 3, 2, 5]));
+
+// Given an integer array nums where every element appears three times except for one, which appears exactly once. Find the single element and return it.
+
+// You must implement a solution with a linear runtime complexity and use only constant extra space.
+
+var singleNumber = function (nums) {
+  const singleNum = {};
+  for (let i = 0; i < nums.length; i++) {
+    singleNum[nums[i]] = ++singleNum[nums[i]] || 1;
+  }
+  let ans = [];
+  for (let key in singleNum) {
+    if (!(singleNum[key] > 1)) {
+      ans.push(key);
+    }
+  }
+  return ans;
+};
