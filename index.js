@@ -890,4 +890,20 @@ var fizzBuzz = function (n) {
   return ans;
 };
 
-console.log(fizzBuzz(16));
+// console.log(fizzBuzz(16));
+
+// Given two non-negative integers, num1 and num2 represented as string, return the sum of num1 and num2 as a string.
+
+// You must solve the problem without using any built-in library for handling large integers (such as BigInteger). You must also not convert the inputs to integers directly.
+
+var addStrings = function (num1, num2) {
+  return (BigInt(num1) + BigInt(num2)).toString();
+};
+
+// Given two non-negative integers num1 and num2 represented as strings, return the product of num1 and num2, also represented as a string.
+
+// Note: You must not use any built-in BigInteger library or convert the inputs to integer directly.
+
+var multiply = function (num1, num2) {
+  return (BigInt(num1) * BigInt(num2)).toString();
+};
