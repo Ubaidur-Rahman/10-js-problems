@@ -863,3 +863,31 @@ var reformatNumber = function (number) {
 };
 
 // console.log(reformatNumber('1-23-45 6 4'));
+
+// Given an integer n, return a string array answer (1-indexed) where:
+
+// answer[i] == "FizzBuzz" if i is divisible by 3 and 5.
+// answer[i] == "Fizz" if i is divisible by 3.
+// answer[i] == "Buzz" if i is divisible by 5.
+// answer[i] == i (as a string) if none of the above conditions are true.
+
+var fizzBuzz = function (n) {
+  let ans = [];
+  for (let i = 1; i <= n; i++) {
+    if (i % 3 === 0 && i % 5 === 0) {
+      ans.push('Fizzbuzz');
+      continue;
+    } else if (i % 3 === 0) {
+      ans.push('Fizz');
+      continue;
+    } else if (i % 5 === 0) {
+      ans.push('Buzz');
+      continue;
+    } else {
+      ans.push(`${i}`);
+    }
+  }
+  return ans;
+};
+
+console.log(fizzBuzz(16));
