@@ -907,3 +907,12 @@ var addStrings = function (num1, num2) {
 var multiply = function (num1, num2) {
   return (BigInt(num1) * BigInt(num2)).toString();
 };
+
+
+
+// Given an integer num, return a string of its base 7 representation.
+
+var convertToBase7 = function(num) {
+    return num.toString(7)
+};
+console.log(convertToBase7(100))
