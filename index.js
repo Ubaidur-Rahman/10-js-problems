@@ -717,10 +717,10 @@ var isPowerOfThree = function (n) {
 // }
 // If all assertions pass, then your solution will be accepted.
 
-// var removeElement = function (nums, val) {
-//   let sortArr = nums.sort((a, b) => a - b);
-//   return sortArr.filter((el) => el !== val);
-// };
+var removeElement = function (nums, val) {
+  let sortArr = nums.sort((a, b) => a - b);
+  return sortArr.filter((el) => el !== val);
+};
 
 // console.log(removeElement([3, 2, 2, 3], 3));
 
@@ -908,11 +908,31 @@ var multiply = function (num1, num2) {
   return (BigInt(num1) * BigInt(num2)).toString();
 };
 
-
-
 // Given an integer num, return a string of its base 7 representation.
 
-var convertToBase7 = function(num) {
-    return num.toString(7)
+var convertToBase7 = function (num) {
+  return num.toString(7);
 };
-console.log(convertToBase7(100))
+// console.log(convertToBase7(100))
+
+// Given a string s, return the lexicographically smallest subsequence of s that contains all the distinct characters of s exactly once.
+
+var smallestSubsequence = function (s) {
+  return s
+    .split('')
+    .sort()
+    .filter((el, i, arr) => i == arr.indexOf(el))
+    .join('');
+};
+
+console.log(smallestSubsequence('cbacdcbc'));
+
+// Write a function that reverses a string. The input string is given as an array of characters s.
+
+// You must do this by modifying the input array in-place with O(1) extra memory.
+
+var reverseString = function (s) {
+  return s.reverse();
+};
+
+console.log(reverseString(['H', 'a', 'n', 'n', 'a', 'h']));
