@@ -947,9 +947,13 @@ var sum = function (num1, num2) {
 
 // Given an integer n, return true if n is an ugly number.
 
-var isUgly = function (n) {
-  if (n % 2 === 0 || n % 5 === 0 || n % 5 === 0) {
-    return true;
+var isUgly = function (num) {
+  if (num < 0) return false;
+  while (num > 1) {
+    if (num % 2 == 0) num /= 2;
+    else if (num % 3 == 0) num /= 3;
+    else if (num % 5 == 0) num /= 5;
+    else return false;
   }
-  return false;
+  return num == 1;
 };
