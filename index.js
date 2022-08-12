@@ -957,3 +957,18 @@ var isUgly = function (num) {
   }
   return num == 1;
 };
+
+// Given an array nums of size n, return the majority element.
+
+// The majority element is the element that appears more than ⌊n / 2⌋ times. You may assume that the majority element always exists in the array.
+
+var majorityElement = function (nums) {
+  let singleNum = {};
+  for (let i = 0; i < nums.length; i++) {
+    singleNum[nums[i]] = ++singleNum[nums[i]] || 1;
+  }
+  return Object.keys(singleNum).reduce((a, b) =>
+    singleNum[a] > singleNum[b] ? a : b
+  );
+};
+console.log(majorityElement([2, 3, 1, 2]));
