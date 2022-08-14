@@ -979,11 +979,35 @@ var countNegatives = function (grid) {
   return grid.flat().filter((el) => el < 0).length;
 };
 
-console.log(
-  countNegatives([
-    [4, 3, 2, -1],
-    [3, 2, 1, -1],
-    [1, 1, -1, -2],
-    [-1, -1, -2, -3],
-  ])
-);
+// console.log(
+//   countNegatives([
+//     [4, 3, 2, -1],
+//     [3, 2, 1, -1],
+//     [1, 1, -1, -2],
+//     [-1, -1, -2, -3],
+//   ])
+// );
+
+// Given two non-negative integers low and high. Return the count of odd numbers between low and high (inclusive).
+
+// var countOdds = function (low, high) {
+//   let arr = [];
+//   for (let i = low; i <= high; i++) {
+//     if (i % 2 === 1) {
+//       arr.push(i);
+//     }
+//   }
+//   return arr.length;
+// };
+
+var countOdds = function (low, high) {
+  let odd = 0;
+  for (let i = low; i <= high; i++) {
+    if (i % 2 === 1) {
+      odd++;
+    }
+  }
+  return odd;
+};
+
+console.log(countOdds(800445804, 979430543));
