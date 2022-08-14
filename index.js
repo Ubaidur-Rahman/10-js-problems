@@ -925,7 +925,7 @@ var smallestSubsequence = function (s) {
     .join('');
 };
 
-console.log(smallestSubsequence('cbacdcbc'));
+// console.log(smallestSubsequence('cbacdcbc'));
 
 // Write a function that reverses a string. The input string is given as an array of characters s.
 
@@ -935,7 +935,7 @@ var reverseString = function (s) {
   return s.reverse();
 };
 
-console.log(reverseString(['H', 'a', 'n', 'n', 'a', 'h']));
+// console.log(reverseString(['H', 'a', 'n', 'n', 'a', 'h']));
 
 // Given two integers num1 and num2, return the sum of the two integers.
 
@@ -971,4 +971,19 @@ var majorityElement = function (nums) {
     singleNum[a] > singleNum[b] ? a : b
   );
 };
-console.log(majorityElement([2, 3, 1, 2]));
+// console.log(majorityElement([2, 3, 1, 2]));
+
+// Given a m x n matrix grid which is sorted in non-increasing order both row-wise and column-wise, return the number of negative numbers in grid.
+
+var countNegatives = function (grid) {
+  return grid.flat().filter((el) => el < 0).length;
+};
+
+console.log(
+  countNegatives([
+    [4, 3, 2, -1],
+    [3, 2, 1, -1],
+    [1, 1, -1, -2],
+    [-1, -1, -2, -3],
+  ])
+);
