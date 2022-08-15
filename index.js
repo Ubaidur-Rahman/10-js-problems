@@ -1064,5 +1064,16 @@ var trimMean = function (arr) {
 };
 
 // console.log(
-//   trimMean([1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3])
+//   trimMean([6,0,7,0,7,5,7,8,3,4,0,7,8,1,6,8,1,1,2,4,8,1,9,5,4,3,8,5,10,8,6,6,1,0,6,10,8,2,3,4])
 // );
+
+// A sentence is a list of words that are separated by a single space with no leading or trailing spaces. Each of the words consists of only uppercase and lowercase English letters (no punctuation).
+
+// For example, "Hello World", "HELLO", and "hello world hello world" are all sentences.
+// You are given a sentence s​​​​​​ and an integer k​​​​​​. You want to truncate s​​​​​​ such that it contains only the first k​​​​​​ words. Return s​​​​​​ after truncating it.
+
+var truncateSentence = function (s, k) {
+  return s.split(' ').slice(0, k).join(' ');
+};
+
+console.log(truncateSentence('Hello how are you Contestant', 4));
