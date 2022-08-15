@@ -1021,4 +1021,48 @@ var countOdds = function (low, high) {
 var getConcatenation = function (nums) {
   return [...nums, ...nums];
 };
-console.log(getConcatenation([1, 2, 1]));
+// console.log(getConcatenation([1, 2, 1]));
+
+// There is a function signFunc(x) that returns:
+
+// 1 if x is positive.
+// -1 if x is negative.
+// 0 if x is equal to 0.
+// You are given an integer array nums. Let product be the product of all values in the array nums.
+
+// Return signFunc(product).
+
+var arraySign = function (nums) {
+  let positive = 0;
+  let negetive = 0;
+  if (nums.includes(0)) {
+    return 0;
+  } else {
+    nums.map((el) => {
+      if (el > 0) {
+        positive += Math.sign(el);
+      } else {
+        negetive += Math.sign(el);
+      }
+    });
+  }
+  return positive + negetive;
+};
+
+// console.log(arraySign([-1, -2, -3, -4, 3, 2, 1]));
+
+// Given an integer array arr, return the mean of the remaining integers after removing the smallest 5% and the largest 5% of the elements.
+
+// Answers within 10-5 of the actual answer will be considered accepted.
+
+var trimMean = function (arr) {
+  let sortArr = [...arr].sort((a, b) => a - b);
+  let fiveParcent = (sortArr.length * 5) / 100;
+  let spliceArr = sortArr.slice(fiveParcent, -fiveParcent);
+  let sum = spliceArr.reduce((acc, cur) => acc + cur, 0);
+  return (sum / spliceArr.length).toFixed(5);
+};
+
+// console.log(
+//   trimMean([1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3])
+// );
