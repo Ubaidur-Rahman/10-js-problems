@@ -1076,4 +1076,42 @@ var truncateSentence = function (s, k) {
   return s.split(' ').slice(0, k).join(' ');
 };
 
-console.log(truncateSentence('Hello how are you Contestant', 4));
+// console.log(truncateSentence('Hello how are you Contestant', 4));
+
+// Given an integer n, return true if it is a power of four. Otherwise, return false.
+
+// An integer n is a power of four, if there exists an integer x such that n == 4x.
+
+var isPowerOfFour = function (n) {
+  let ans = false;
+  for (let i = 0; i < n; i++) {
+    if (Math.pow(4, i) === n) {
+      ans = true;
+    }
+  }
+  return ans;
+};
+
+// console.log(isPowerOfFour(4));
+
+// Reversing an integer means to reverse all its digits.
+
+// For example, reversing 2021 gives 1202. Reversing 12300 gives 321 as the leading zeros are not retained.
+// Given an integer num, reverse num to get reversed1, then reverse reversed1 to get reversed2. Return true if reversed2 equals num. Otherwise return false.
+
+var isSameAfterReversals = function (num) {
+  if (num === 0) {
+    return true;
+  }
+  let reverseArr = num.toString().split('').reverse();
+  console.log(reverseArr);
+  if (reverseArr[0] == 0) {
+    return false;
+  } else {
+    if (Number(reverseArr.reverse().join('')) === num) {
+      return true;
+    }
+  }
+};
+
+console.log(isSameAfterReversals(0));
