@@ -1114,4 +1114,41 @@ var isSameAfterReversals = function (num) {
   }
 };
 
-console.log(isSameAfterReversals(0));
+// console.log(isSameAfterReversals(0));
+
+// Given a signed 32-bit integer x, return x with its digits reversed. If reversing x causes the value to go outside the signed 32-bit integer range [-231, 231 - 1], then return 0.
+
+// Assume the environment does not allow you to store 64-bit integers (signed or unsigned).
+
+var reverse = function (x) {
+  if (x === 0) {
+    return true;
+  }
+  let reverseArr = x.toString().split('').reverse();
+  console.log(reverseArr);
+  if (reverseArr[0] == 0) {
+    return reverseArr;
+  } else {
+    if (Number(reverseArr.reverse().join('')) === x) {
+      return Number(reverseArr.reverse().join(''));
+    }
+  }
+};
+
+console.log(reverse(230));
+
+// Reverse bits of a given 32 bits unsigned integer.
+
+// Note:
+
+// Note that in some languages, such as Java, there is no unsigned integer type. In this case, both input and output will be given as a signed integer type. They should not affect your implementation, as the integer's internal binary representation is the same, whether it is signed or unsigned.
+// In Java, the compiler represents the signed integers using 2's complement notation. Therefore, in Example 2 above, the input represents the signed integer -3 and the output represents the signed integer -1073741825.
+
+var reverseBits = function (n) {
+  let reverseNum = Number(n.split('').reverse().join(''));
+  console.log(reverseNum);
+  console.log((reverseNum >>> 0).toString(2));
+};
+
+// console.log(reverseBits('11111111111111111111111111111101'));
+
