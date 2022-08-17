@@ -1200,4 +1200,35 @@ var sortArrayByParityII = function (nums) {
   return even.reduce((a, c, i) => (a.push(c, odd[i]), a), []);
 };
 
-console.log(sortArrayByParityII([4, 2, 5, 7]));
+// console.log(sortArrayByParityII([4, 2, 5, 7]));
+
+// You are given a 0-indexed integer array nums. Rearrange the values of nums according to the following rules:
+
+// Sort the values at odd indices of nums in non-increasing order.
+// For example, if nums = [4,1,2,3] before this step, it becomes [4,3,2,1] after. The values at odd indices 1 and 3 are sorted in non-increasing order.
+// Sort the values at even indices of nums in non-decreasing order.
+// For example, if nums = [4,1,2,3] before this step, it becomes [2,1,4,3] after. The values at even indices 0 and 2 are sorted in non-decreasing order.
+// Return the array formed after rearranging the values of nums.
+
+var sortEvenOdd = function (nums) {
+  let odd = [];
+  let even = [];
+  for (let i = 0; i < nums.length; i++) {
+    if (i % 2 === 0) {
+      odd.push(nums[i]);
+    } else {
+      even.push(nums[i]);
+    }
+  }
+  console.log(odd, even);
+  let evenSort = even.sort((a, b) => b - a);
+  let oddSort = odd.sort((a, b) => a - b);
+  let mergeArray = oddSort.flatMap((e, idx) => [e, evenSort[idx]]);
+  return mergeArray.filter((e) => e !== undefined);
+};
+
+console.log(
+  sortEvenOdd([
+    36, 45, 32, 31, 15, 41, 9, 46, 36, 6, 15, 16, 33, 26, 27, 31, 44,
+  ])
+);
