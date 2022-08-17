@@ -1178,4 +1178,26 @@ var sortArrayByParity = function (nums) {
   return [...even, ...odd];
 };
 
-console.log(sortArrayByParity([-4, -1, 0, 3, 10]));
+// console.log(sortArrayByParity([-4, -1, 0, 3, 10]));
+
+// Given an array of integers nums, half of the integers in nums are odd, and the other half are even.
+
+// Sort the array so that whenever nums[i] is odd, i is odd, and whenever nums[i] is even, i is even.
+
+// Return any answer array that satisfies this condition.
+
+var sortArrayByParityII = function (nums) {
+  let odd = [];
+  let even = [];
+  nums.map((el) => {
+    if (el % 2 != 0) {
+      odd.push(el);
+    } else {
+      even.push(el);
+    }
+  });
+  // return even.flatMap((e, idx) => [e, odd[idx]]); runtime slow
+  return even.reduce((a, c, i) => (a.push(c, odd[i]), a), []);
+};
+
+console.log(sortArrayByParityII([4, 2, 5, 7]));
