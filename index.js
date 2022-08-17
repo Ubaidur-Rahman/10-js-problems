@@ -1135,7 +1135,7 @@ var reverse = function (x) {
   }
 };
 
-console.log(reverse(230));
+// console.log(reverse(230));
 
 // Reverse bits of a given 32 bits unsigned integer.
 
@@ -1152,3 +1152,11 @@ var reverseBits = function (n) {
 
 // console.log(reverseBits('11111111111111111111111111111101'));
 
+// Given an integer array nums sorted in non-decreasing order, return an array of the squares of each number sorted in non-decreasing order.
+
+var sortedSquares = function (nums) {
+  let ans = nums.map((el) => el * el);
+  return [...ans].sort((a, b) => a - b);
+};
+
+console.log(sortedSquares([-4, -1, 0, 3, 10]));
