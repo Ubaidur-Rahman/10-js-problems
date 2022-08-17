@@ -1159,4 +1159,23 @@ var sortedSquares = function (nums) {
   return [...ans].sort((a, b) => a - b);
 };
 
-console.log(sortedSquares([-4, -1, 0, 3, 10]));
+// console.log(sortedSquares([-4, -1, 0, 3, 10]));
+
+// Given an integer array nums, move all the even integers at the beginning of the array followed by all the odd integers.
+
+// Return any array that satisfies this condition.
+
+var sortArrayByParity = function (nums) {
+  let odd = [];
+  let even = [];
+  nums.map((el) => {
+    if (el % 2 != 0) {
+      odd.push(el);
+    } else {
+      even.push(el);
+    }
+  });
+  return [...even, ...odd];
+};
+
+console.log(sortArrayByParity([-4, -1, 0, 3, 10]));
