@@ -1227,8 +1227,28 @@ var sortEvenOdd = function (nums) {
   return mergeArray.filter((e) => e !== undefined);
 };
 
-console.log(
-  sortEvenOdd([
-    36, 45, 32, 31, 15, 41, 9, 46, 36, 6, 15, 16, 33, 26, 27, 31, 44,
-  ])
-);
+// console.log(
+//   sortEvenOdd([
+//     36, 45, 32, 31, 15, 41, 9, 46, 36, 6, 15, 16, 33, 26, 27, 31, 44,
+//   ])
+// );
+
+// You are given an integer array nums consisting of 2 * n integers.
+
+// You need to divide nums into n pairs such that:
+
+// Each element belongs to exactly one pair.
+// The elements present in a pair are equal.
+// Return true if nums can be divided into n pairs, otherwise return false.
+
+var divideArray = function (nums) {
+  let singleNum = {};
+  for (let i = 0; i < nums.length; i++) {
+    singleNum[nums[i]] = ++singleNum[nums[i]] || 1;
+  }
+  let arr = Object.values(singleNum);
+  let ans = arr.every((el) => el % 2 == 0);
+  return ans;
+};
+
+console.log(divideArray([3, 2, 3, 2, 2, 2, 1]));
