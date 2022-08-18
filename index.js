@@ -1104,7 +1104,6 @@ var isSameAfterReversals = function (num) {
     return true;
   }
   let reverseArr = num.toString().split('').reverse();
-  console.log(reverseArr);
   if (reverseArr[0] == 0) {
     return false;
   } else {
@@ -1260,3 +1259,17 @@ var divideArray = function (nums) {
 };
 
 // console.log(divideArray([3, 2, 3, 2, 2, 2, 1]));
+
+// Given an integer array sorted in non-decreasing order, there is exactly one integer in the array that occurs more than 25% of the time, return that integer.
+
+var findSpecialInteger = function (arr) {
+  let singleNum = {};
+  for (let i = 0; i < arr.length; i++) {
+    singleNum[arr[i]] = ++singleNum[arr[i]] || 1;
+  }
+  return Object.keys(singleNum).reduce((a, b) =>
+    singleNum[a] > singleNum[b] ? a : b
+  );
+};
+
+console.log(findSpecialInteger([1, 1, 2, 3, 3, 4, 4, 6, 6, 6]));
