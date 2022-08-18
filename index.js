@@ -1241,14 +1241,22 @@ var sortEvenOdd = function (nums) {
 // The elements present in a pair are equal.
 // Return true if nums can be divided into n pairs, otherwise return false.
 
+// var divideArray = function (nums) {
+//   let singleNum = {};
+//   for (let i = 0; i < nums.length; i++) {
+//     singleNum[nums[i]] = ++singleNum[nums[i]] || 1;
+//   }
+//   let arr = Object.values(singleNum);
+//   let ans = arr.every((el) => el % 2 == 0);
+//   return ans;
+// };
+
 var divideArray = function (nums) {
   let singleNum = {};
   for (let i = 0; i < nums.length; i++) {
     singleNum[nums[i]] = ++singleNum[nums[i]] || 1;
   }
-  let arr = Object.values(singleNum);
-  let ans = arr.every((el) => el % 2 == 0);
-  return ans;
+  return Object.values(singleNum).every((el) => el % 2 == 0);
 };
 
-console.log(divideArray([3, 2, 3, 2, 2, 2, 1]));
+// console.log(divideArray([3, 2, 3, 2, 2, 2, 1]));
