@@ -1273,10 +1273,9 @@ var findSpecialInteger = function (arr) {
 };
 
 console.log(findSpecialInteger([1, 1, 2, 3, 3, 4, 4, 6, 6, 6]));
-You are given the heads of two sorted linked lists list1 and list2.
 
-Merge the two lists in a one sorted list. The list should be made by splicing together the nodes of the first two lists.
+// Given a 0-indexed integer array nums of length n and an integer k, return the number of pairs (i, j) where 0 <= i < j < n, such that nums[i] == nums[j] and (i * j) is divisible by k.
 
-Return the head of the merged linked list.
-
-
+var countPairs = function (nums, k) {
+  
+};
