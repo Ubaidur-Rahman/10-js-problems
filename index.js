@@ -1272,10 +1272,41 @@ var findSpecialInteger = function (arr) {
   );
 };
 
-console.log(findSpecialInteger([1, 1, 2, 3, 3, 4, 4, 6, 6, 6]));
+// console.log(findSpecialInteger([1, 1, 2, 3, 3, 4, 4, 6, 6, 6]));
 
 // Given a 0-indexed integer array nums of length n and an integer k, return the number of pairs (i, j) where 0 <= i < j < n, such that nums[i] == nums[j] and (i * j) is divisible by k.
 
-var countPairs = function (nums, k) {
-  
+var countPairs = function (nums, k) {};
+
+// Given a string s and an array of strings words, determine whether s is a prefix string of words.
+
+// A string s is a prefix string of words if s can be made by concatenating the first k strings in words for some positive k no larger than words.length.
+
+// Return true if s is a prefix string of words, or false otherwise.
+
+var isPrefixString = function (s, words) {
+  let joinArr = words.join('').slice(0, s.length);
+  if (s === words[0]) {
+    return s === joinArr;
+  } else {
+    return false;
+  }
 };
+
+// console.log(isPrefixString('aaaaaa', ['aa', 'aaaa', 'banana']));
+
+// Given an array of strings words, return the first palindromic string in the array. If there is no such string, return an empty string "".
+
+// A string is palindromic if it reads the same forward and backward.
+
+var firstPalindrome = function (words) {
+  let arr = [];
+  words.find((el) => {
+    if (el === el.split('').reverse().join('')) {
+      arr.push(el);
+    }
+  });
+  return arr[0] || '';
+};
+
+console.log(firstPalindrome(['abc', 'car', 'ad', 'raceca', 'cool']));
