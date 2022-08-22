@@ -1078,21 +1078,15 @@ var truncateSentence = function (s, k) {
 
 // console.log(truncateSentence('Hello how are you Contestant', 4));
 
-// Given an integer n, return true if it is a power of four. Otherwise, return false.
+// Given an integer n, return true if it is a power of Two. Otherwise, return false.
 
-// An integer n is a power of four, if there exists an integer x such that n == 4x.
+// An integer n is a power of Two, if there exists an integer x such that n == 4x.
 
-var isPowerOfFour = function (n) {
-  let ans = false;
-  for (let i = 0; i < n; i++) {
-    if (Math.pow(4, i) === n) {
-      ans = true;
-    }
-  }
-  return ans;
+var isPowerOfTwo = function (n) {
+  return Math.pow(2, n) % 2 === 0 || Math.pow(2, n) % 2 === 1;
 };
 
-// console.log(isPowerOfFour(4));
+console.log(isPowerOfTwo(2));
 
 // Reversing an integer means to reverse all its digits.
 
