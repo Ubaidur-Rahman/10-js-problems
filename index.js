@@ -1083,7 +1083,7 @@ var truncateSentence = function (s, k) {
 // An integer n is a power of Two, if there exists an integer x such that n == 4x.
 
 var isPowerOfTwo = function (n) {
-  return Math.pow(2, n) % 2 === 0 || Math.pow(2, n) % 2 === 1;
+  return Math.log2(n) % 2 === 0 || Math.log2(n) % 2 === 1;
 };
 
 console.log(isPowerOfTwo(2));
