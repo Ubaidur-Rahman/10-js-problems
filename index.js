@@ -1335,4 +1335,10 @@ var numberOfMatches = function (n) {
   return totalMatch;
 };
 
-console.log(numberOfMatches(5));
+// console.log(numberOfMatches(5));
+
+function isPangram(string) {
+  var regex = /([a-z])(?!.*\1)/gi;
+  return (string.match(regex) || []).length === 26;
+}
+console.log(isPangram('A quick brown fox jumps over the lazy dog'));
