@@ -120,7 +120,7 @@ var firstMissingPositive = function (nums) {
   //     return i;
   //   }
   // }
-  console.log(arr, arrLength);
+  // console.log(arr, arrLength);
 };
 
 // firstMissingPositive([3, 4, -1, 1]);
@@ -1086,7 +1086,7 @@ var isPowerOfTwo = function (n) {
   return Math.log2(n) % 2 === 0 || Math.log2(n) % 2 === 1;
 };
 
-console.log(isPowerOfTwo(2));
+// console.log(isPowerOfTwo(2));
 
 // Reversing an integer means to reverse all its digits.
 
@@ -1341,4 +1341,14 @@ function isPangram(string) {
   var regex = /([a-z])(?!.*\1)/gi;
   return (string.match(regex) || []).length === 26;
 }
-console.log(isPangram('A quick brown fox jumps over the lazy dog'));
+// console.log(isPangram('A quick brown fox jumps over the lazy dog'));
+
+// Given two strings ransomNote and magazine, return true if ransomNote can be constructed by using the letters from magazine and false otherwise.
+
+// Each letter in magazine can only be used once in ransomNote.
+
+var canConstruct = function (ransomNote, magazine) {
+  return magazine.includes(ransomNote);
+};
+
+// console.log(canConstruct('aa', 'aab'));
