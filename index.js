@@ -1352,3 +1352,22 @@ var canConstruct = function (ransomNote, magazine) {
 };
 
 // console.log(canConstruct('aa', 'aab'));
+
+// You are given a string num, representing a large integer. Return the largest-valued odd integer (as a string) that is a non-empty substring of num, or an empty string "" if no odd integer exists.
+
+// A substring is a contiguous sequence of characters within a string.
+
+var largestOddNumber = function (num) {
+  let numString = num.toString();
+  for (let i = numString.length - 1; i >= 0; i--) {
+    // console.log(numString.charAt(i)%2)
+    if (numString.charAt(i) % 2 == 1) {
+      console.log(numString.substring(0, i + 1));
+      return numString.substring(0, i + 1);
+    } else {
+      return '';
+    }
+  }
+};
+
+console.log(largestOddNumber('52'));
