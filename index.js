@@ -1409,6 +1409,15 @@ var search2 = function (nums, target) {
 
 // You must write an algorithm that runs in O(log n) time.
 
+
+
+// 154. Find Minimum in Rotated Sorted Array II
+
+// var findMin = function (nums) {
+//   let sortArr = nums.sort((a, b) => a - b);
+//   return sortArr[0];
+// };
+
 var findMin = function (nums) {
   let sortArr = nums.sort((a, b) => a - b);
   return sortArr[0];
