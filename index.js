@@ -1385,3 +1385,33 @@ var search = function (nums, target) {
 };
 
 // console.log(search([4, 5, 6, 7, 0, 1, 2], 0));
+
+// There is an integer array nums sorted in non-decreasing order (not necessarily with distinct values).
+
+// Before being passed to your function, nums is rotated at an unknown pivot index k (0 <= k < nums.length) such that the resulting array is [nums[k], nums[k+1], ..., nums[n-1], nums[0], nums[1], ..., nums[k-1]] (0-indexed). For example, [0,1,2,4,4,4,5,6,6,7] might be rotated at pivot index 5 and become [4,5,6,6,7,0,1,2,4,4].
+
+// Given the array nums after the rotation and an integer target, return true if target is in nums, or false if it is not in nums.
+
+// You must decrease the overall operation steps as much as possible.
+
+var search2 = function (nums, target) {
+  return nums.includes(target);
+};
+// console.log(search2([4, 5, 6, 7, 0, 1, 2], 3));
+
+// Suppose an array of length n sorted in ascending order is rotated between 1 and n times. For example, the array nums = [0,1,2,4,5,6,7] might become:
+
+// [4,5,6,7,0,1,2] if it was rotated 4 times.
+// [0,1,2,4,5,6,7] if it was rotated 7 times.
+// Notice that rotating an array [a[0], a[1], a[2], ..., a[n-1]] 1 time results in the array [a[n-1], a[0], a[1], a[2], ..., a[n-2]].
+
+// Given the sorted rotated array nums of unique elements, return the minimum element of this array.
+
+// You must write an algorithm that runs in O(log n) time.
+
+var findMin = function (nums) {
+  let sortArr = nums.sort((a, b) => a - b);
+  return sortArr[0];
+};
+
+// console.log(findMin([4, 5, 6, 7, 0, 1, 2]));
