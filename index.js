@@ -1430,3 +1430,16 @@ var findMin = function (nums) {
 // Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.
 
 var maxProfit = function (prices) {};
+
+// Given a list of non-negative integers nums, arrange them such that they form the largest number and return it.
+
+// Since the result may be very large, so you need to return a string instead of an integer.
+
+var largestNumber = function (nums) {
+  nums = nums.sort((a, b) => `${b}${a}` - `${a}${b}`);
+  console.log(nums);
+  if (nums[0] === 0) return '0';
+  return nums.join('');
+};
+
+console.log(largestNumber([3, 30, 34, 5, 9]));
